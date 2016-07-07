@@ -2,7 +2,7 @@
 
 ```
 git clone https://github.com/cvazac/ui-interview-starter.git
-cd ui-interview-starter.git
+cd ui-interview-starter/
 npm install
 npm start
 ```
