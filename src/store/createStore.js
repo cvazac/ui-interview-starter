@@ -10,17 +10,6 @@ export default (initialState = {}, history) => {
   const middleware = [thunk, routerMiddleware(history)]
 
   // ======================================================
-  // Store Enhancers
-  // ======================================================
-  const enhancers = []
-  if (__DEBUG__) {
-    const devToolsExtension = window.devToolsExtension
-    if (typeof devToolsExtension === 'function') {
-      enhancers.push(devToolsExtension())
-    }
-  }
-
-  // ======================================================
   // Store Instantiation and HMR Setup
   // ======================================================
   const store = createStore(
@@ -28,7 +17,6 @@ export default (initialState = {}, history) => {
     initialState,
     compose(
       applyMiddleware(...middleware),
-      ...enhancers
     )
   )
   store.asyncReducers = {}
